@@ -1,13 +1,13 @@
 {
-  "main.css": "/static/css/main.a4233492.chunk.css",
-  "main.js": "/static/js/main.0f6994f7.chunk.js",
-  "main.js.map": "/static/js/main.0f6994f7.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-  "static/js/2.e32459e9.chunk.js": "/static/js/2.e32459e9.chunk.js",
-  "static/js/2.e32459e9.chunk.js.map": "/static/js/2.e32459e9.chunk.js.map",
-  "index.html": "/index.html",
-  "precache-manifest.a9e9ebcc8b8ba9d5116f286b23cef366.js": "/precache-manifest.a9e9ebcc8b8ba9d5116f286b23cef366.js",
-  "service-worker.js": "/service-worker.js",
-  "static/css/main.a4233492.chunk.css.map": "/static/css/main.a4233492.chunk.css.map"
+  "main.css": "/Vimeo-Dashboard/static/css/main.a4233492.chunk.css",
+  "main.js": "/Vimeo-Dashboard/static/js/main.0f6994f7.chunk.js",
+  "main.js.map": "/Vimeo-Dashboard/static/js/main.0f6994f7.chunk.js.map",
+  "runtime~main.js": "/Vimeo-Dashboard/static/js/runtime~main.b4a43633.js",
+  "runtime~main.js.map": "/Vimeo-Dashboard/static/js/runtime~main.b4a43633.js.map",
+  "static/js/2.e32459e9.chunk.js": "/Vimeo-Dashboard/static/js/2.e32459e9.chunk.js",
+  "static/js/2.e32459e9.chunk.js.map": "/Vimeo-Dashboard/static/js/2.e32459e9.chunk.js.map",
+  "index.html": "/Vimeo-Dashboard/index.html",
+  "precache-manifest.10de64c1b3fb513945f554a709912fdb.js": "/Vimeo-Dashboard/precache-manifest.10de64c1b3fb513945f554a709912fdb.js",
+  "service-worker.js": "/Vimeo-Dashboard/service-worker.js",
+  "static/css/main.a4233492.chunk.css.map": "/Vimeo-Dashboard/static/css/main.a4233492.chunk.css.map"
 }
