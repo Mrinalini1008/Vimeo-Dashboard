@@ -4,7 +4,7 @@ import Videoupload from "./VideoUpload";
 import NavBar from "./NavBar";
 import Home from "./Home";
 import "./App.css";
-import { Route, Routes} from "react-router-dom";
+import { Route, Routes, Navigate} from "react-router-dom";
 
 export default function App(){
     return(
@@ -12,10 +12,11 @@ export default function App(){
             <h1 className="Head">Vimeo Dashboard</h1>
             <NavBar />
             <Routes>
-                <Route path="/*">
-                    <Route index element ={<Home />}/>
-                    <Route exact path="VideoDetails" element={<VideoDetails />}/>
-                    <Route exact path="VideoUpload" element={<Videoupload />}/>
+                <Route>
+                    <Route exact path="/Home" element={<Home />}/>
+                    <Route exact path="/VideoDetails" element={<VideoDetails />}/>
+                    <Route exact path="/VideoUpload" element={<Videoupload />}/>
+                    <Route path="*" element={<Navigate to="/Home" replace />} />
                 </Route>
                 
             </Routes>
