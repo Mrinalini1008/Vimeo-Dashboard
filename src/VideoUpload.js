@@ -20,7 +20,7 @@
   
     async function uploadVideo() {
       setUploadComplete("uploading");
-      const Token = "a2c4b3de90fa383f2bc05d70ce966e1d";
+      const Token = "dd837f43dd0c134c14bcc10aa4a49610";
       const resPost = await fetch(`https://api.vimeo.com/me/videos`, {
         method: "POST",
         headers: {

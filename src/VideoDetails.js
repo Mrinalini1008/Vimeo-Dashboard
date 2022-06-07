@@ -10,7 +10,7 @@ function VideoDetails(){
   const [vidlength, setVidlength] = useState(0);
   useEffect(()=>{
     async function vidoedeets(){
-      const Token = "a2c4b3de90fa383f2bc05d70ce966e1d";
+      const Token = "dd837f43dd0c134c14bcc10aa4a49610";
       const url = `https://api.vimeo.com/me/videos`;
       const response = await fetch(url, {
         headers: {
@@ -20,7 +20,6 @@ function VideoDetails(){
       const data = await response.json();
       console.log(data);
       setVidlength(data.data.length); 
-      console.log(vidlength)
       setVideoarr(data.data);
     }
    vidoedeets()
