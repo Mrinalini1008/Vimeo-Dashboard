@@ -9,11 +9,11 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
   }
  
   return (
-      <nav style={{backgroundColor:'#6d3088'}}>
+      <nav>
         <ul className='Pages'>
             {pageNumbers.map(number => (
-            <li key={number} className='page-item'>
-                <a onClick={() => paginate(number)} href='#!' className='page-link'>
+            <li key={number} className="btn btn-primary" style={{textdecoration: "none"}}>
+                <a onClick={() => paginate(number)} href='#!' className="text-decoration-none" style={{ textdecoration: "none",color : "white"}}>
                 {number}
                 </a>
             </li>

@@ -1,82 +1,199 @@
 .MAIN{
-    width:100%;
-    height:100%;
-    margin:0;
-    padding:0;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top:0;
+    bottom:0;
+    margin: 0;
+    display : inline;
 }
 .Head{
     text-align: center;
-    margin:0;
-    padding:0;
+    background-color: white;
+    right : 0px;
+    left : 0px;
+    margin: top 5px;
+    height : 100%
+}
+.Home{
+    background-color: #E5E5E5;
+    display:block;
+    text-align: center;
+    height : auto;
 }
 .Top{
-    margin:0;
-    padding:0;
-    background-color:#6d3088;
+    background-color:white;
+    font-family: Georgia;
+    margin: 0;
     width:100%;
     text-align: center;
     display: inline-block;
 }
 .NavL{
-    background-color:#6d3088;
-    height:30px;
+    background-color:white;
+    margin :0;
+    margin-top :30px;
+    height : 50 px;
+    padding: 15px;
+    display: inline-block;
+    width: 50%;
+}
+.list-inline{
+    margin-top: 1%;
+}
+.Logo{
+    margin-top: 1%;
     padding:5px;
-    margin:0;
+    float : left;
 }
 .Nav{
-    height:20px;
-    background-color: antiquewhite;
-    display:inline;
-    float:left;
-    padding: 3px;
-    border: 1px solid black;
+    text-decoration: none;
+    border-radius: 5px;
+    height: 20px;
+    background-color: #6d3088;
+    display:inline-block;
+    padding: 10px;
     margin-right: 1%;
-    
-}
-.table {
-	display: table;   /* Allow the centering to work */
-	margin: 0 auto;
 }
 .Full{
-    min-width: 1300px;
-    min-height:520px;
-	list-style: none;
-	padding-top: 20px;
+    width: auto;
+    display: flex;
+    justify-content: center;
 }
 .Videos{
-    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
     display: inline;
-    border: 2px solid black;
-    padding:5px;
-    margin-left: 10%;
+    border-radius: 10px;
+    padding: 0px;
     margin-top: 1%;
+    margin-right: 2%;
     float: left;
-    width:400px;
+    width: auto;
+    box-shadow: 1px 2px #D4D4D4;
 
+}
+.Vid{
+    background-color: white;
+    border-radius: 10px;
 }
 .Pages{
     text-align: center;
     height:100%;
     padding: 10px;
+    margin : 0;
 }
-.page-item{
+.btn-btn-link{
     display:inline;
-    background-color: aliceblue;
-    border: 1px solid black;
+    background-color: #6d3088;
+    border: 1px transparent;
+    box-shadow: 1px 2px #D4D4D4;
+    border-radius: 5px;
     margin-right: 0.5%;
-    padding:5px;
+    padding:10px;
 }
-.input{
-    background-color: white ;
-    color: #6d3088;
-}
-.upload-btn{
-    text-align: center;
-    width: 200px;
-    margin:1%;
-    background-color: azure;
+.page-link{
+    background-color :"#6d3088";
+    border-radius :"5px";
 }
 .Videoup{
-    text-align: center;
-    margin:1%;
+    display : flex;
+    justify-content: center;
+    background-color: #E5E5E5;
+    padding-top: 1%;
+    width : 100%;
+    height :100vh;
+}
+.UPbox{
+    width: 80%;
+    background-color: white;
+    margin-top: 40px;
+    padding : 3%;
+    height: fit-content;
+    border-radius: 15px;
+    font-family: Roboto, sans-serif !important;
+    box-shadow: 1px 2px #D4D4D4;
+
+}
+.CEN{
+    width: 100%;
+    display: block;
+    text-align:center;
+}
+.Centre{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-color: #E5E5E5;
+    height: 100%;
+}
+.Fileinput{
+    margin-left: 16%;
+    width : 50vh;
+}
+.Fileinput2{
+    margin-left: 10%;
+    width : 100%;
+    height: 100%;
+    width: 50vh;
+    border-radius: 5px;
+    border: 1px solid #E5E5E5;
+    font-family: Roboto, sans-serif !important;
+}
+.Input{
+    display: flex;
+    border : none;
+    justify-content: center;
+}
+.Label{
+    text-align: left;
+    width : 100vh;
+    height : 100%;
+    margin-top : 5px;
+}
+.Input2{
+    text-align : center;
+}
+.Form{
+    font-family: Roboto, sans-serif !important;
+    padding: 3%;
+    border : 1px solid white;
+    border-radius: 15px;
+    margin-top: 1%;
+    width: 80%;
+    background-color: white;
+    height: max-content;
+    box-shadow: 1px 2px #D4D4D4;
+}
+.heading{
+    margin-top: 0;
+    margin-left : 5px;
+    font-size: x-large;
+}
+.Buttons{
+    height: auto;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #6d3088;
+    border: transparent;
+}
+.Box{
+    width:max-content;
+    background-color: white;
+    margin-top: 40px;
+    padding : 3%;
+    height: fit-content;
+    border-radius: 15px;
+    font-family: Roboto, sans-serif !important;
+    box-shadow: 1px 2px #D4D4D4;
+}
+.H1{
+    margin-top: 0;
+    font-size: x-large;
+    margin-left: 5px;
+    width: 100%;
+}
+.dropdown{
+    text-align:left;
+    width : 50%;
+    margin-bottom: 1%;
 }

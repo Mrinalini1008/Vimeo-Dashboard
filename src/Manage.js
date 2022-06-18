@@ -1,25 +1,20 @@
-import React, {useEffect} from "react";
- 
-const Managevid = ({uri}) =>{
-    useEffect(()=>{
-        async function getdeets(){
-          const url = "https://api.vimeo.com/teams/175479107/analytics";
-          const Token = "dd837f43dd0c134c14bcc10aa4a49610";
-          const response = await fetch(url,{
-            headers: {
-              Authorization: `Bearer ${Token}`,
-            },
-          });
-          const data = await response.json();
-          console.log(data);
-        }
-       getdeets()
-      }, [])
+import React from 'react'
 
-    return(
+export default function Login() {
+  return (
+    <div>
         <div>
-            This is returned.
+            <h4>Login</h4>
+            <div>
+                <label>Email address</label>
+                <input type="email"/>
+            </div>
+            <div>
+                <label>Password</label>
+                <input type="password"/>
+            </div>
+            <button type="submit">Submit</button>
         </div>
-    )
+    </div>
+  )
 }
-export default Managevid;;
