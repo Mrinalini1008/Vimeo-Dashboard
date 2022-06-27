@@ -1,25 +1,27 @@
 import React from "react";
-import VideoDetails from "./VideoDetails";
-import Videoupload from "./VideoUpload";
-import NavBar from "./NavBar";
-import Dashboard from "./Dashboard";
-import "./App.css";
-import { Route, Routes, Navigate} from "react-router-dom";
+import Home from "./Components/Home";
+import "./Components/App.css";
+import { Route, Routes} from "react-router-dom";
+import Login from "./Components/Login";
+import VideoDetails from "./Components/VideoDetails";
+import Videoupload from "./Components/VideoUpload";
+import { AuthProvider } from "./Components/Auth";
+import { RequireAuth } from "./Components/RequireAuth";
 
 export default function App(){
+    console.log(process.env);
     return(
         <div className="MAIN">
-            <img className="Logo" src = "https://www.speedlabs.in/wp-content/uploads/2022/01/logo-final.png" alt="logo"/>
-            <NavBar />
-            <Routes>
-                <Route>
-                    <Route exact path="/Dashboard" element={<Dashboard />}/>
-                    <Route exact path="/VideoDetails" element={<VideoDetails />}/>
-                    <Route exact path="/VideoUpload" element={<Videoupload />}/>
-                    <Route path="*" element={<Navigate to="/Dashboard" replace />} />
-                </Route>
+            <AuthProvider>
+                <Routes>
+                   <Route exact path="/" element={<Login />}/>
+                   <Route exact path="/Home" element={<Home/>}/>
+                   <Route exact path="/Home/VideoDetails" element={<RequireAuth><VideoDetails /></RequireAuth>}/>
+                   <Route exact path="/Home/VideoUpload" element={<RequireAuth><Videoupload /></RequireAuth>}/>
                 
-            </Routes>
+                </Routes>
+            </AuthProvider>
+            
             
         </div>
     )

@@ -5,9 +5,9 @@ function Video({videoarr}){
     
 
     return(
-            <ul className='Full'>
+            <ul className='list-inline one'>
             {videoarr.map(video=>(
-                <li key={video.uri} className="Videos">
+                <li key={video.uri} className="list-inline-item one">
                     <iframe className='Vid' src = {video.player_embed_url}allow="fullscreen;picture-in-picture"width="auto"height="auto"allowFullScreen title={video.name}></iframe>
                     <p><strong style={{color :"#333132"}}>Name</strong> : {video.name}</p>
                     <p><strong style={{color :"#333132"}}>Plays</strong> : {video.stats.plays}</p>

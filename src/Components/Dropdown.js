@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from "reactstrap";
-import VideoDetails from "./VideoDetails";
+import VideoDetails from "../VideoDetails";
 
 function DropdownM({arr}){
     const [dropdown, setDropdown] = useState(false);
