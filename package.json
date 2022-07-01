@@ -19,6 +19,7 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "^2.1.8",
+    "react-simple-timestamp-to-date": "^1.0.3",
     "reactstrap": "^9.1.1",
     "web-vitals": "^2.1.4"
   },

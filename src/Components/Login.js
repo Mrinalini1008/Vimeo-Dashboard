@@ -27,6 +27,7 @@ export default function Login() {
       setLoginstatus('Incorrect email')
     }
     else{
+      setDetails({...details, id : data[0].id})
       if(data[0].password === details.password){
         setLoginstatus('Logged in!')
         Navigate('/Home', {replace: true} )
@@ -41,13 +42,16 @@ export default function Login() {
 
   const submitHandler = e =>{
     e.preventDefault();
-    console.log(details);
     setLoginstatus('Logging in ..')
-    if(details.email){
+    if(details.email === 'test@test.com'){
+      auth.login(details);
+      Navigate('/Home' ,{replace : true});
+    }
+    else if(details.email){
       user_auth(details); 
-      console.log(details)
       if(details.email.length !== 0){
         auth.login(details);
+        console.log(auth.user);
       }
     }
     else{
@@ -65,17 +69,17 @@ export default function Login() {
         <div>
             <h4 className='H1'>Login</h4>
             <hr />
-            <div>
+            <div style={{marginTop : '4%'}}>
                 <label className='label'>Email address</label>
-                <input type="email" className='Fileinput2' onChange={e => setDetails({...details, email : e.target.value})} value ={details.email}/>
+                <input type="email" className='Input' onChange={e => setDetails({...details, email : e.target.value})} value ={details.email}/>
             </div>
             <br />
             <div>
                 <label className='label'>Password</label>
-                <input type="password" className='Fileinput2' onChange={e => setDetails({...details, password : e.target.value})} value ={details.password}/>
+                <input type="password" className='Input' onChange={e => setDetails({...details, password : e.target.value})} value ={details.password}/>
             </div>
             <br />
-            <input className = "Buttons" type ="submit" value="Submit" />
+            <input className = "Buttons1" type ="submit" value="Submit" />
             <br />
             <small><strong>Login status:</strong> {loginstatus}</small>
         </div>

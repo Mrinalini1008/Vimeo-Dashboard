@@ -13,7 +13,7 @@ app.use(cors({
 }));
 
 const Pool = mysql.createPool({
-    connectionLimit : '1000',
+    connectionLimit : '20',
     host: '162.214.80.49',
     user: 'qjzcohmy_sip',
     password: 'Speedlabs@123',

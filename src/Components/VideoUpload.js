@@ -1,14 +1,13 @@
   import React, { useEffect, useRef, useState } from "react";
   import "./App.css";
-  import NavBar from "./NavBar";
   import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle} from "reactstrap";
   import { useAuth } from "./Auth";
   import * as Papa from "papaparse";
   
   function Videoupload(){
     const [videoFile, setVideoFile] = useState("no file exists");
-    const [uploadComplete, setUploadComplete] = useState("awaiting file upload");
-    const [videoTitle, setVideoTitle] = useState("Enter File Name");
+    const [uploadComplete, setUploadComplete] = useState("Awaiting file upload");
+    const [videoTitle, setVideoTitle] = useState("Enter Video Name");
     const fileInput = useRef(null);
     const titleInput = useRef(null);
     const [dropdown, setDropdown] = useState(false);
@@ -21,41 +20,70 @@
     const Token = process.env.REACT_APP_VIMEO_TOKEN ;
     const userdburl = process.env.REACT_APP_USERDB_URL;
     const actionurl = process.env.REACT_APP_ACTIONDB_URL ;
+    const User = JSON.parse(localStorage.getItem('user'));
 
-    useEffect(()=>{
-      async function folderdeets(){
-        const response2 = await fetch(vimfdurl, {
-          headers: {
-            Authorization: `Bearer ${Token}`,
-            "Content-Type": "application/json",
-            Accept: "application/vnd.vimeo.*+json;version=3.4",
-          },
-        });
-        const data2 = await response2.json();
-        const response3 = await fetch(userdburl, { mode: 'cors' });
-        const data3 = await response3.json();
-        const userarr = data3.filter(user => (user.email === auth.user.email));
-        auth.user.id = userarr[0].id;
-        console.log(auth.user.id)
-        const accessF = Papa.parse(userarr[0].access);
-        const finalF = accessF.data[0];
-        const finalarr = finalF.map(folder=>{
-          return{
-            ...folder,
-            folderDs: data2.data.find(folderD => folderD.name === folder)
-          }
-        })
-        console.log(finalarr);
-        console.log(finalF);
-        console.log(data2);
-        console.log(userarr);
-        setArr(finalarr);
+    if(User.password !== ""){
+      useEffect(()=>{
+        async function folderdeets(){
+          const response2 = await fetch(vimfdurl, {
+            headers: {
+              Authorization: `Bearer ${Token}`,
+              "Content-Type": "application/json",
+              Accept: "application/vnd.vimeo.*+json;version=3.4",
+            },
+          });
+          const data2 = await response2.json();
+          const response3 = await fetch(userdburl, { mode: 'cors' });
+          const data3 = await response3.json();
+          const userarr = data3.filter(user => (user.email === User.email));
+          console.log(userarr);
+          User['id'] = userarr[0].id;
+          localStorage.setItem('myLunch', JSON.stringify(User));
+          console.log(User)
+          const accessF = Papa.parse(userarr[0].access);
+          const finalF = accessF.data[0];
+          const finalarr = finalF.map(folder=>{
+            return{
+              ...folder,
+              folderDs: data2.data.find(folderD => folderD.name === folder)
+            }
+          })
+          console.log(finalarr);
+          console.log(finalF);
+          console.log(data2);
+          console.log(userarr);
+          setArr(finalarr);
+        }
+        folderdeets();
+      },[])
+    
       }
-      folderdeets();
-    },[]);
+      else(
+        useEffect(()=>{
+          async function folderdeets(){
+            const response2 = await fetch(vimfdurl, {
+              headers: {
+                Authorization: `Bearer ${Token}`,
+                "Content-Type": "application/json",
+                Accept: "application/vnd.vimeo.*+json;version=3.4",
+              },
+            });
+            const data2 = await response2.json(); 
+            const finalF = ['Test'];
+            const finalarr = finalF.map(folder=>{
+              return{
+                ...folder,
+                folderDs: data2.data.find(folderD => folderD.name === folder)
+              }
+          })
+          setArr(finalarr);
+        }
+          folderdeets();
+        },[])
+      )
 
     useEffect(() => {
-      if (uploadComplete === "complete") {
+      if (uploadComplete === "Complete!") {
         setTimeout(() => {
           setUploadComplete("Awaiting file upload");
           fileInput.current.value = "";
@@ -79,7 +107,7 @@
         setUploadComplete("Please select a file");
         return false
       }
-      setUploadComplete("uploading");
+      setUploadComplete("Uploading");
       const resPost = await fetch(process.env.REACT_APP_VIMEOVID_URL, {
         method: "POST",
         headers: {
@@ -147,21 +175,27 @@
       console.log(response);
     }
 
-    const logourl = process.env.REACT_APP_LOGO_URL;
     
     return(
       <div className="MAIN">
-        <div className="Header">
-          <img className="Logo" src = {logourl} alt="logo"/>
-          <NavBar />
-        </div>  
-      <div className="Videoup">
-        <main className="UPbox">
-          <h2 className ="H1">Upload A video</h2>
-          <hr />
-          <div className="CEN">
-          <Dropdown isOpen={dropdown} toggle={toggle}>
-          <DropdownToggle caret>
+          <div className="Videoup">
+          <input 
+            className="Fileinput"
+            ref={fileInput}
+            onChange={(e) => setVideoFile(e.target.files[0])}
+            type="file"
+          />
+          <p />
+          <div className = "Inup">
+          <input
+            className="Fileinput2"
+            ref={titleInput}
+            value={videoTitle}
+            onChange={(e) => setVideoTitle(e.target.value)}
+            type="text"
+          />
+          <Dropdown isOpen={dropdown} toggle={toggle} className = "Drop" >
+          <DropdownToggle caret className="Drop">
           {show}
           </DropdownToggle>
           <DropdownMenu>
@@ -170,33 +204,14 @@
           })}
           </DropdownMenu>
           </Dropdown>
-          <label className="label">File</label>
-          <input 
-            className="Fileinput"
-            ref={fileInput}
-            onChange={(e) => setVideoFile(e.target.files[0])}
-            type="file"
-          />
-          <p />
-          
-          <p>
-          <label className="label">Name of the file</label>
-          <input
-            className="Fileinput2"
-            ref={titleInput}
-            value={videoTitle}
-            onChange={(e) => setVideoTitle(e.target.value)}
-            type="text"
-          />
-          </p>
           <button className="Buttons" style={{color : "white"}} onClick={()=>uploadVideo(uri)}>Upload Video</button>
+          </div>
+          <p />
           <p>
-            <small><strong>Upload status:</strong> {uploadComplete}</small>
+            <small>Upload status: <span style={{color: '#889095'}}>{uploadComplete}</span></small>
           </p>
           </div>
-       </main>
-      </div>
-      </div>
+          </div>
     );
   }
 

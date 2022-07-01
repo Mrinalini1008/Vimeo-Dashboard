@@ -1,76 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
 .MAIN{
-    position: absolute;
+    position: relative;
     right: 0;
     left: 0;
     top:0;
     bottom:0;
     margin: 0;
+    height: 100vh;
     display : block;
+    font-family: 'Poppins';
 }
-.Head{
-    text-align: center;
-    background-color: white;
-    right : 0px;
-    left : 0px;
-    margin: top 5px;
-    height : 100%
-}
-.Home{
-    background-color: #E5E5E5;
-    display:block;
-    text-align: center;
-    height : 100%;
-    margin-top: 0%;
-}
-.Top{
-    background-color:white;
-    font-family: Georgia;
-    margin: 0;
-    width:100%;
-    text-align: center;
-    display: inline-block;
-}
-.list-inline{
-    margin-top: 1%;
-    min-width: 80%;
-    max-width : 100;
+.list-inline.three{
+    width: 100%;
+    margin-left: 2%;
     
+}
+.list-inline-item.three{
+    text-decoration: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 90%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    line-height: normal;
+    margin-left: 1%;
+}
+.list-inline.two{
+    width : 30%;
 }
 .list-inline-item{
     max-width : fit-content;
     display: inline-block;
 }
 .list-inline.one{
-    text-align: center;
-}
-.Header{
-    display : block;
-    max-width : 100%;
-}
-@media only screen and (min-width: 1024px){
-    .Header{
-        display: flex;
-    }
-    .Logo{
-        object-fit: scale-down;
-    }
-};
-.Logo{
-    margin-top: 1%;
-    padding:5px;
-    margin-right: 1%;
+    width: 98%;
+    margin: 0;
+    margin-right: 0;
+    margin-left: 1.5%;
+    padding: 0;
+    padding-inline-start: 0%;
 }
 .list-inline-item.one{
-    font-family: Arial, Helvetica, sans-serif;
-    box-shadow: 1px 2px #D4D4D4;
-    border-radius: 10px;
+    text-align: left;
     padding: 0px;
-    margin-top: 1%;
-    margin-right: 2%;
+    margin-top: 2%;
+    max-width: 18.5%;
+    min-width: 150px;
+    margin-left: 0.5%;
+    border : 1px solid #e3e3e3;
+    border-radius: 4px;
+    
 }
 .Vid{
     background-color: white;
-    border-radius: 10px;
+    border-radius: 4px;
+    min-width: 140px;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    height: fit-content;
+    object-fit: cover;
+    border-bottom: 1px solid #e3e3e3
 }
 .Pages{
     text-align: center;
@@ -78,25 +70,13 @@
     padding: 10px;
     margin : 0;
 }
-.btn-btn-link{
-    display:inline;
-    background-color: #6d3088;
-    border: 1px transparent;
-    box-shadow: 1px 2px #D4D4D4;
-    border-radius: 5px;
-    margin-right: 0.5%;
-    padding:10px;
-}
 .page-link{
     background-color :"#6d3088";
     border-radius :"5px";
 }
 .Videoup{
-    display : flex;
-    justify-content: center;
-    background-color: #E5E5E5;
-    padding-top: 1%;
-    width : 100%;
+    margin-left: 2%;
+    width : 98%;
     height :100%;
 }
 .login{
@@ -105,117 +85,270 @@
     width : 100%;
     height :100%;
 }
-.UPbox{
-    width: 80%;
-    background-color: white;
-    margin-top: 40px;
-    padding : 3%;
-    height: fit-content;
-    border-radius: 15px;
-    font-family: Roboto, sans-serif !important;
-    box-shadow: 1px 2px #D4D4D4;
-
+.Inup{
+    display : flex;
+    height: 7%;
+    font-family: 'Poppins';
 }
 .Loginbox{
     width: fit-content;
     min-width: 50%;
     background-color: white;
     margin-top: 40px;
-    padding : 3%;
+    padding : 2%;
     height: fit-content;
     border-radius: 15px;
-    font-family: Roboto, sans-serif !important;
     box-shadow: 1px 2px #D4D4D4;
-}
-.CEN{
-    width: 100%;
-    display: block;
-    text-align:center;
-}
-.label{
-    width : 50%;
+    text-align: center;
 }
 .Centre{
     padding-top : 1%;
     position: relative;
     display: flex;
     justify-content: center;
-    background-color: #E5E5E5;
     min-height: 100%;
     height: fit-content;
     padding-bottom: 5%;
 }
 .Fileinput{
-    height : 100%;
-    width : 50%;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border: 1px solid #E5E5E5;
-    font-family: Roboto, sans-serif !important;
+    height : fit-content;
+    width : 98%;
+    padding : 2%;
+    border: 1px dashed #E4E4E4;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
 }
 .Fileinput2{
-    width : 50%;
+    width : 30%;
     height: 100%;
-    padding: 0.5%;
     border-radius: 5px;
-    border: 1px solid #E5E5E5;
-    font-family: Roboto, sans-serif !important;
-}
-.Input{
-    display: flex;
-    border : none;
-    justify-content: center;
-}
-.Input2{
-    text-align : center;
-}
-.Form{
-    font-family: Roboto, sans-serif !important;
-    padding: 3%;
-    border : 1px solid white;
-    border-radius: 15px;
-    margin-top: 1%;
-    width: 80%;
-    background-color: white;
-    height: max-content;
-    box-shadow: 1px 2px #D4D4D4;
-}
-.heading{
-    margin-top: 0;
-    margin-left : 5px;
-    font-size: x-large;
+    border: 1px solid #989898;
+    padding-left : 3%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 100%;
+    line-height: normal;
+    color: #889095;
+    font-family: 'Poppins';
 }
 .Buttons{
-    height: auto;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #6d3088;
+    height: 100%;
+    border-radius: 5px;
+    background-color: #6A2F85;
     border: transparent;
     color: white;
+    margin-left: 1.5%;
+    font-family: 'Poppins';
+    font-size: 100%;
+    padding-left: 3%;
+    padding-right: 3%;
 }
-.Box{
-    width:90%;
-    background-color: white;
-    margin-top: 40px;
-    padding : 3%;
-    height: fit-content;
-    border-radius: 15px;
-    font-family: Roboto, sans-serif !important;
-    box-shadow: 1px 2px #D4D4D4;
-}
-.H1{
-    text-align: left;
+
+.list-inline.two{
+    padding: none;
+    max-width : 16%;
+    min-width: fit-content;
+    min-height : 100%;
+    background-color: #6d3088;
     margin-top: 0;
-    font-size: x-large;
-    margin-left: 5px;
-    width: 100%;
 }
-.dropdown{
-    text-align:left;
-    width : 50%;
+.list-item{
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 90%;
+    line-height: 21px;
+}
+.list-item.two{
+    font-size: 120%;
+    text-align: center;
+    padding: 2%;
+    margin-top: 8%;
+}
+.Display{
+    display: flex;
+    min-height: 100%;
+    max-height: fit-content;
+    font-family: 'Poppins';
+}
+.Links{
+    text-decoration: none;
+    color: #E6E6E6;
+    padding-left: 10%;
+}
+.Links:hover{
+    color : #FF9433;
+}
+.Links:focus{
+    color : #FF9433;
+}
+.Links2{
+    text-decoration: none;
+}
+.Main{
+    width: 84%;
+}
+.Toplink{
+    text-decoration: none;
+    color: #393A71;
+    border-left: 1px solid #E3E3E3;
+    padding-left: 1%;
+    padding-right: 1%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 90%;
+    line-height: 24px;
+}
+.Topbar-item{
+    max-width: fit-content;
+    padding: none;
+    min-width: 100%;
+}
+.Topbar{
+    list-style-type: none;
+    min-width: fit-content;
+    padding-top : 1.5%;
+    padding-left: 0%;
+    padding-bottom: 1.5%;
+    margin: 0;
+    border : 1px solid white;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+.H2{
+    font-style: normal;
+    font-weight: 650;
+    font-size: 130%;
+    line-height: normal;
+    color: #6A2F85;
+    padding: 1%;
+    padding-left: 2%;
+    margin: 0;
+}
+.Drop.dropdown-toggle.btn.btn-secondary{
+   background-color: white;
+   color: #889095;
+   border: none;
+   width: 100%;
+   padding-left: 10%;
+   height: 100%;
+   font-family: 'Poppins';
+   font-size: 100%;
+}
+.Drop.dropdown{
+    padding: 0;
+    margin: 0;
+    width: 15%;
+    height : 100%;
+    border: 1px solid #889095;
+    border-radius: 5px;
+    margin-left: 1.5%;
+}
+.Drop1.dropdown-toggle.btn.btn-secondary{
+    background-color: white;
+    font-size : 90%;
+    color: #889095;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.Drop1.dropdown{
+    margin-left: 2%;
+}
+.Vidname{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: medium;
+    line-height: 28px;
+    margin-left:6%;
     margin-bottom: 1%;
 }
-.Logo1{
-    padding:5px;
-    display : block;
+.CommentsNo{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: medium;
+    line-height: 27px;
+}
+.Comments{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 80%;
+    line-height: 24px;
+    color: #6971DD;
+
+}
+.Plays{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 90%;
+    line-height: 24px;
+    color: #7D4398;
+    padding-left: 10%;
+}
+.btn.btn-primary{
+    background-color: white;
+    color: #889095;
+}
+.Play{
+    margin-left: 10%;
+}
+.TimeStamp{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 75%;
+    line-height: 21px;
+    margin-left: 6%;
+    margin-top: 0%;
+}
+a.Links2:hover{
+    color : #FF9433;
+} 
+a.Links2{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 105%;
+    line-height: normal;
+    color: #889095;
+}
+a.Links2:focus{
+    color : #FF9433;
+    text-decoration: underline #FF9433;
+    text-underline-offset: 50%;
+}
+.label{
+    width: 30%;
+    text-align: center;
+}
+.Input{
+    width: 60%;
+    text-align: center;
+    border-radius: 4px;
+    font-family: 'Poppins';
+    border: 1px solid #989898;
+}
+.Buttons1{
+    background-color: #6A2F85;
+    border-radius: 4px;
+    border: none;
+    color: white;
+    padding: 1.5%;
+    width:15%
+}
+.H1{
+    font : 'Poppins';
+    font-weight: 500;
+    color: #889095;
+    text-align: left;
 }

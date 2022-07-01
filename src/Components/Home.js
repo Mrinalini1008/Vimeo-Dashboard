@@ -1,25 +1,25 @@
 import React from "react";
-import { useAuth } from "./Auth";
+import { Route, Routes} from "react-router-dom";
+import {RequireAuth} from "./RequireAuth";
+import { AuthProvider } from "./Auth";
+import VideoDetails from './VideoDetails';
+import Videoupload from './VideoUpload';
+import SideNavBar from "./SideNav";
 import NavBar from "./NavBar";
-import './App.css';
 
-function Home(){
-    const auth = useAuth();
-    console.log(auth.user)
-    const logourl = process.env.REACT_APP_LOGO_URL;
-
+export default function Home (){
     return(
-        <div className="MAIN">
-            <div className="Header">
-                <img className="Logo" src = {logourl} alt="logo"/>
-                <NavBar />
-            </div>
-            
-            <div className="Home">
-                <p>This is the dashboard. Welcome {auth.user.email}</p>
-            </div>
-            
+        <div className="Display">
+            <SideNavBar />
+            <div className="Main">
+          <NavBar /> 
+        <AuthProvider>
+            <Routes>
+                <Route exact path="/VideoDetails" element={<RequireAuth><VideoDetails /></RequireAuth>}/>
+                <Route exact path="/VideoUpload" element={<RequireAuth><Videoupload /></RequireAuth>}/>
+            </Routes>
+        </AuthProvider>
+        </div>
         </div>
     )
 }
-export default Home;

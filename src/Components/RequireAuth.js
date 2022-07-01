@@ -1,11 +1,10 @@
 import { Navigate } from "react-router-dom";
-import { useAuth } from "./Auth";
 import React from "react";
 
 export const RequireAuth = ({children}) =>{
-    const auth = useAuth();
+    const user = JSON.parse(localStorage.getItem('user'));
 
-    if(!auth.user.email){
+    if(user === null){
         return <Navigate to = '/' />
     }
 
