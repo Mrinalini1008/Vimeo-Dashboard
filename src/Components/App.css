@@ -8,7 +8,6 @@
     bottom:0;
     margin: 0;
     height: 100vh;
-    display : block;
     font-family: 'Poppins';
 }
 .list-inline.three{
@@ -251,7 +250,7 @@
 }
 .Drop1.dropdown-toggle.btn.btn-secondary{
     background-color: white;
-    font-size : 90%;
+    font-size : 100%;
     color: #889095;
     padding-left: 3%;
     padding-right: 3%;
@@ -318,7 +317,7 @@ a.Links2{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
-    font-size: 105%;
+    font-size: 110%;
     line-height: normal;
     color: #889095;
 }
